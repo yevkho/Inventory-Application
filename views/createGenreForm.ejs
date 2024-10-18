@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>New Genre</title>
+  </head>
+  <body>
+    <h2>New Genre Form</h2>
+    <%- include("errors.ejs") %>
+    <form method="POST" action="/genres/create">
+      <label
+        >Genre:<input type="text" name="genreName" value="<%= locals.genre%>"
+      /></label>
+      <button type="submit">Create</button>
+    </form>
+  </body>
+</html>

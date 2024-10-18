@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Update Genre</title>
+    <script>
+      const password = "12345";
+      const userPassword = prompt("Enter the password:");
+      if (userPassword !== password) {
+        alert("Wrong Password");
+        window.location.href = "/";
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Update Genre Form</h2>
+    <%- include("errors.ejs") %>
+    <form method="POST" action="/genres/<%=genre.id  %>/update">
+      <label
+        >Genre:<input type="text" name="genreName" value="<%= genre.name%>"
+      /></label>
+      <button type="submit">Update</button>
+    </form>
+  </body>
+</html>

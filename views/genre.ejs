@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Genre Games</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+  </head>
+  <body>
+    <h2><%=genre[0].name %> Games</h2>
+
+    <div class="games">
+      <% genreGames.map((game) => { %>
+      <ul>
+        <li><a href="/games/<%=game.id%>"><%=game.title %></a></li>
+        <p>Release date: <%=game.title %></p>
+        <p>Genre: <%=game.genres %></p>
+        <p>Developer: <%=game.developers %></p>
+        <p>Rating: <%=game.rating %></p>
+        <p>Stock: <%=game.stock %></p>
+      </ul>
+      <% }) %>
+    </div>
+  </body>
+</html>

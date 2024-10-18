@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>Game Inventory App</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+  </head>
+  <body>
+    <h2>Game Inventory App</h2>
+    <div class="genres">
+      <h3>Popular Genres</h3>
+      <% genres.map((genre) => { %>
+
+      <ul>
+        <li>
+          <a href="genres/<%= genre.id%>"><b><%=genre.name %></b></a>
+        </li>
+
+        <a href="genres/<%= genre.id %>/update">Update</a>
+
+        <form action="genres/<%= genre.id %>/delete" method="POST">
+          <button type="submit" onclick="return confirm('Sure?');">
+            Delete
+          </button>
+        </form>
+      </ul>
+
+      <% }) %>
+      <button onClick="location.href='/genres/create'">Create New Genre</button>
+    </div>
+
+    <div class="developers">
+      <h3>Game Developers</h3>
+      <% developers.map((developer) => { %>
+      <ul>
+        <li>
+          <a href="/developers/<%= developer.id%>"><%=developer.name %></a>
+        </li>
+      </ul>
+      <% }) %>
+    </div>
+
+    <div class="games">
+      <h3>Our Games</h3>
+      <% games.map((game) => { %>
+      <ul>
+        <li><a href="/games/<%=game.id%>"><%=game.title %></a></li>
+        <p>Release date: <%=game.title %></p>
+        <p>Genre: <%=game.genres %></p>
+        <p>Developer: <%=game.developers %></p>
+        <p>Rating: <%=game.rating %></p>
+        <p>Stock: <%=game.stock %></p>
+      </ul>
+
+      <% }) %>
+      <button onClick="location.href='/games/create'">Create New Game</button>
+    </div>
+  </body>
+</html>
